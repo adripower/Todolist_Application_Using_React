@@ -1,4 +1,24 @@
-import React, {useState }from "react";
+import React, {useInsertionEffect, useState }from "react";
+
+
+
+//------------aqui la API.
+function createUser(){
+fetch ("https://playground.4geeks.com/apis/fake/todos/user/adrian1234",{
+		method:"POST",
+		body: JSON.stringify([]),
+		headers:{
+			"Content-Type": "application/json"
+		}
+	}
+)
+.then((response)=>response.json())
+.then((data)=>console.log(data))
+.catch((error)=>console.log(error))
+
+}
+
+//-----Aqui termina la Api.
 
 
 
@@ -33,5 +53,7 @@ const Home = () => {
 		</div>
 	);
 };
+
+
 
 export default Home;
