@@ -11,7 +11,10 @@
 
 */
 body{
+    
+    
     margin-top: 100px;
+    width: 600px;
 }
 ul{
     padding: 0;
@@ -25,4 +28,7 @@ ul li{
 h1{
     text-align: center;
 }
-input{ border: none; width: 100px;}
+                     
+input{ 
+    border: none; width:500px;
+}
