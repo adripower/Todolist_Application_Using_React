@@ -4,7 +4,8 @@ import React, {useInsertionEffect, useState }from "react";
 
 //------------aqui la API.
 function createUser(){
-fetch ("https://playground.4geeks.com/apis/fake/todos/user/adrian1234",{
+fetch ("playground.4geeks.com/contact/agendas/adrian1234",{
+	
 		method:"POST",
 		body: JSON.stringify([]),
 		headers:{
