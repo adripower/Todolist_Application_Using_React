@@ -1,10 +1,27 @@
-import React, {useInsertionEffect, useState }from "react";
+import React, { useEffect, useState } from "react";
+
+
+
+
+//create your first component
+const Home = () => {
+	const [ inputValue, setInputValue] = useState("")
+	const [ todos, setTodos] = useState([])
+
+
+
+
+	
+useEffect((()=>{
+	subirList()
+	createUser()
+}))
 
 
 
 //------------aqui la API.
 function createUser(){
-fetch ("playground.4geeks.com/contact/agendas/adrian1234",{
+fetch ("playground.4geeks.com/contact/agendas/adri",{
 	
 		method:"POST",
 		body: JSON.stringify([]),
@@ -18,16 +35,36 @@ fetch ("playground.4geeks.com/contact/agendas/adrian1234",{
 .catch((error)=>console.log(error))
 
 }
+//---------------- aqui hacemos el get de la API , se solicita informacion 
+
+function getList(){
+	fetch("playground.4geeks.com/contact/agendas/adri",{
+		method:"GET",})
+		.then((response)=>response.json())
+		.then((data)=>setTodos(data))
+		.catch((error)=>console.log(error))
+	
+}
+//--------------- aqui hacemos el put de la API, que es subir lo escrito 
+
+function subirList(){
+	fetch("playground.4geeks.com/contact/agendas/adri",{
+		method:"PUT",
+		body: JSON.stringify([]),
+		headers:{
+			"Content.Type":"aplication/json"
+		}
+	})
+		.then((response)=>response.json())
+		.then((data)=>getList(data))
+		.catch((error)=>console.log(error))
+	
+}
+
+
+
 
 //-----Aqui termina la Api.
-
-
-
-//create your first component
-const Home = () => {
-	const [ inputValue, setInputValue] = useState("")
-	const [ todos, setTodos] = useState([])
-
 
 	return (
 
@@ -49,12 +86,12 @@ const Home = () => {
 					
 						}}
 
-					placeholder="What do you need to do "/>	</li>
+					placeholder="Escribe lo que quieres recordar..."/>	</li>
 					{todos.map((item, index)=> (
 				<li key={index}>{item}<i className="fas fa-trash" 
 				onClick={() => setTodos(todos.filter((t, currentIndex) => index != currentIndex))}  > </i></li>))}
 			</ul>
-			<div>23 tasks</div>
+			<div>{todos.length} Tasks</div>
 		</div>
 	);
 };
