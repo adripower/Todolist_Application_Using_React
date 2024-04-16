@@ -10,7 +10,8 @@ const Home = () => {
 
 
 
-
+////////----------estoy super atascado no consigo que deje de saltar error 
+// entiendo que es porque intenta cargar todo el rato el POST y al estar creado ya el usuario da error
 	
 useEffect((()=>{
 	subirList()
