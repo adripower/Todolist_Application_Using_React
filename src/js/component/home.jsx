@@ -21,7 +21,7 @@ useEffect((()=>{
 
 //------------aqui la API.
 function createUser(){
-fetch ("playground.4geeks.com/contact/agendas/adri",{
+fetch ("https://playground.4geeks.com/contact/agendas/adri",{
 	
 		method:"POST",
 		body: JSON.stringify([]),
@@ -38,7 +38,7 @@ fetch ("playground.4geeks.com/contact/agendas/adri",{
 //---------------- aqui hacemos el get de la API , se solicita informacion 
 
 function getList(){
-	fetch("playground.4geeks.com/contact/agendas/adri",{
+	fetch("https://playground.4geeks.com/contact/agendas/adri",{
 		method:"GET",})
 		.then((response)=>response.json())
 		.then((data)=>setTodos(data))
@@ -48,7 +48,7 @@ function getList(){
 //--------------- aqui hacemos el put de la API, que es subir lo escrito 
 
 function subirList(){
-	fetch("playground.4geeks.com/contact/agendas/adri",{
+	fetch("https://playground.4geeks.com/contact/agendas/adri",{
 		method:"PUT",
 		body: JSON.stringify([]),
 		headers:{
