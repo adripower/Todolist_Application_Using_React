@@ -42,7 +42,7 @@ function getList(){
 	fetch("https://playground.4geeks.com/contact/agendas/adri",{
 		method:"GET",})
 		.then((response)=>response.json())
-		.then((data)=>setTodos(data))
+		.then((data)=>setTodos(data.todos))
 		.catch((error)=>console.log(error))
 	
 }
