@@ -70,6 +70,20 @@ function subirList(){
 		.catch((error)=>console.log(error))
 	
 }
+//aqui hacemos el delete de la API
+
+// const borrarTodos = () => {
+// 	fetch('https://playground.4geeks.com/contact/agendas/adri', {
+// 	  method: "DELETE",
+// 	  headers:{
+// 		"Content-Type": "application/json"
+// 		}
+// 	})
+// 	.then(response => response.json())
+// 	.then(data => setTodos([]))
+// 	.catch(error => console.log(error));
+// };
+
 
 
 
