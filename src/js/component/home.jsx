@@ -62,7 +62,7 @@ function subirList(){
 		method:"PUT",
 		body: JSON.stringify([]),
 		headers:{
-			"Content.Type":"aplication/json"
+			"Content.Type":"application/json"
 		}
 	})
 		.then((response)=>response.json())
