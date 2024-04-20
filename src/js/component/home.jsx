@@ -31,7 +31,10 @@ fetch ("https://playground.4geeks.com/contact/agendas/adri",{
 	}
 )
 .then((response)=>response.json())
-.then((data)=>console.log(data))
+.then((data)=>{
+	console.log(data);
+	getList()
+})
 .catch((error)=>console.log(error))
 
 }
@@ -40,8 +43,15 @@ fetch ("https://playground.4geeks.com/contact/agendas/adri",{
 function getList(){
 	fetch("https://playground.4geeks.com/contact/agendas/adri",{
 		method:"GET",})
-		.then((response)=>response.json())
-		.then((data)=>setTodos(data.todos))
+		.then((response)=>{
+			console.log(response);
+			if ( response.status === 404) {
+				createUser()
+			}else return(response.json())
+		})
+		.then((data)=>{
+			console.log(data);
+			setTodos(data.todos)})
 		.catch((error)=>console.log(error))
 	
 }
